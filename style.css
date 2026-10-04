@@ -269,9 +269,9 @@ h3 { font-family: var(--titulo); font-size: 1.5rem; margin: 20px 0 6px; color: v
 /* ===== Fundos com imagem (uma por fase) =====
    Para trocar uma imagem, substitua o arquivo em assets/fundos/ (fase1.jpg, fase2.jpg, fase3.jpg)
    ou mude o caminho abaixo. A camada escura por cima mantém o texto legível. */
-#fundo .camada[data-fase="1"] { --img: url("assets/fundos/fase1.jpg"); }
-#fundo .camada[data-fase="2"] { --img: url("assets/fundos/fase2.jpg"); }
-#fundo .camada[data-fase="3"] { --img: url("assets/fundos/fase3.jpg"); }
+#fundo .camada[data-fase="1"] { --img: url("fase1.jpg"); }
+#fundo .camada[data-fase="2"] { --img: url("fase2.jpg"); }
+#fundo .camada[data-fase="3"] { --img: url("fase3.jpg"); }
 
 /* Textos com parágrafos */
 #texto, #consequencia-texto { white-space: pre-line; }
