@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Libertador: a independência da Venezuela</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button id="btn-som" class="botao-som" aria-pressed="false">Som: ligado</button>
+
+  <!-- Fundos por fase: para usar imagens, veja o comentário no style.css -->
+  <div id="fundo" aria-hidden="true">
+    <div class="camada ativa" data-fase="1"></div>
+    <div class="camada" data-fase="2"></div>
+    <div class="camada" data-fase="3"></div>
+  </div>
+
+  <main id="jogo">
+
+    <!-- Painel com as 4 barras (aparece depois do início) -->
+    <ul id="painel" class="oculto" aria-label="Situação do governo patriota"></ul>
+
+    <!-- Capa -->
+    <section id="tela-inicio" class="tela">
+      <h1>Libertador</h1>
+      <p class="subtitulo">A independência da Venezuela, 1811–1830</p>
+      <figure class="figura">
+        <img src="assets/imagens/mapa-venezuela.jpg" alt="Mapa antigo da Venezuela">
+        <figcaption>Mapa da Venezuela, Encyclopaedia Britannica, 9ª edição (século XIX).</figcaption>
+      </figure>
+      <p>Um país acabou de nascer e já está em guerra. Cada decisão sua vai ganhar apoio de um lado e perder do outro.</p>
+      <button id="btn-entrar">Entrar na história</button>
+    </section>
+
+    <!-- Contexto e explicação do jogo -->
+    <section id="tela-briefing" class="tela oculto">
+      <h2>Antes de começar</h2>
+
+      <h3>O contexto</h3>
+      <p>Em 1808, Napoleão invadiu a Espanha e prendeu o rei Fernando VII. Sem rei no trono, as colônias americanas passaram a discutir quem deveria governá-las. Em 19 de abril de 1810, o cabildo de Caracas formou uma junta que deixou de obedecer às autoridades espanholas. Em 5 de julho de 1811, representantes das províncias declararam a independência e nasceu a Primeira República da Venezuela.</p>
+      <p>Declarar não bastava. A sociedade venezuelana era muito desigual. De um lado, os crioulos ricos, donos de terras e de escravizados, que queriam autonomia. De outro, pardos livres, indígenas, escravizados e llaneros, que se perguntavam se a independência mudaria suas vidas. E havia ainda os realistas, fiéis à Coroa. A guerra seria também uma disputa social.</p>
+      <p>Você é <strong>Simón Bolívar</strong>, nascido em Caracas em 1783. Nas próximas decisões, você terá que conquistar a independência sem perder as pessoas que a sustentam.</p>
+
+      <h3>Como jogar</h3>
+      <p>Em cada situação você escolhe entre duas ou três opções. Toda escolha tem um preço: o que melhora uma barra costuma piorar outra. As barras vão de 0 a 10 e começam em 5.</p>
+      <ul class="legenda-barras">
+        <li><span class="amostra popular"></span><span><strong>Apoio Popular:</strong> llaneros, camponeses, escravizados e o povo em geral.</span></li>
+        <li><span class="amostra elites"></span><span><strong>Apoio das Elites:</strong> os crioulos ricos que financiam a guerra.</span></li>
+        <li><span class="amostra recursos"></span><span><strong>Recursos:</strong> dinheiro, armas e alimentos.</span></li>
+        <li><span class="amostra militar"></span><span><strong>Força Militar:</strong> tropas, organização e capacidade de combate.</span></li>
+      </ul>
+      <p>Não existe derrota: em todos os finais a Venezuela se torna independente. O que muda é <strong>como</strong> e a que custo. Suas escolhas também deixam marcas, e algumas decisões abrem ou fecham opções mais adiante. O final depende de tudo o que você decidiu.</p>
+      <p>Dica: clique no texto da situação para ele aparecer inteiro de uma vez.</p>
+      <button id="btn-comecar">Começar</button>
+    </section>
+
+    <section id="tela-situacao" class="tela oculto">
+      <p id="ano" class="ano"></p>
+      <h2 id="titulo"></h2>
+      <figure id="figura" class="figura oculto">
+        <img id="imagem" src="" alt="">
+        <figcaption id="legenda"></figcaption>
+      </figure>
+      <p id="texto"></p>
+      <div id="opcoes"></div>
+    </section>
+
+    <section id="tela-consequencia" class="tela oculto">
+      <h2>Consequência</h2>
+      <p id="consequencia-texto"></p>
+      <ul id="mudancas"></ul>
+      <button id="btn-continuar">Continuar</button>
+    </section>
+
+    <section id="tela-final" class="tela oculto">
+      <p class="ano">Final</p>
+      <h2 id="final-titulo"></h2>
+      <p id="final-texto"></p>
+      <h3>Seu caminho e a história real</h3>
+      <ol id="resumo" class="resumo"></ol>
+      <button id="btn-reiniciar">Jogar de novo</button>
+    </section>
+
+  </main>
+
+  <!-- Camada da transição de fumaça -->
+  <div id="fumaca" hidden aria-hidden="true"></div>
+
+  <script src="dados.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
